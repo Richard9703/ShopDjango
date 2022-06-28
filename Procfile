@@ -1,1 +1,1 @@
-web: gunircorn shopapp.wsgi
+web: gunircorn shop.wsgi
