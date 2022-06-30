@@ -20,7 +20,7 @@ class Collection(models.Model):
 
 
 class Product(models.Model):
-    collection = models.ForeignKey(Collection, on_delete=models.DO_NOTHING, related_name='products', ) 
+    collection = models.ForeignKey(Collection, on_delete=models.DO_NOTHING, related_name='products') 
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
     description = models.TextField(blank=True)
