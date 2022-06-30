@@ -21,6 +21,6 @@ from shopapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('product_list/', views.product_list),
-    path('product_detail/', views.product_detail),
+    path('product_list/', views.product_list, name='product_list'),
+    path('product_detail/', views.product_detail, name='product_detail'),
 ]
