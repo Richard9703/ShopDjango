@@ -63,7 +63,7 @@ class Post(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title        
+        return self.name        
 
 
 class Comment(models.Model):
