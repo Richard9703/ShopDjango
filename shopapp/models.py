@@ -14,8 +14,6 @@ class Collection(models.Model):
 
     class Meta: 
         ordering = ('name',)
-        verbose_name = 'collection'
-        verbose_name_plural = 'collections'
 
     def __str__(self):
         return self.name
