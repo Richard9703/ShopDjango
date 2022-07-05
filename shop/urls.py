@@ -16,12 +16,12 @@ Including another URLconf
 
 from django.urls import path, include
 from django.contrib import admin
-from shopapp import views
+from shopapp.views import ProductList
 # from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('product_list/', views.product_list, name='product_list'),
-    path('product_detail/', views.product_detail, name='product_detail'),
+    path('shopapp/', ProductList.as_view()),
+    # path('shopapp/', ProductDetail.as_view()),
 ]
