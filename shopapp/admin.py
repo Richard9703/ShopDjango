@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
-from .models import Collection, Product, Comment, Post
+from .models import Collection, Product
 
 
 
@@ -21,22 +20,3 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
 
-
-@admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'slug', 'status', 'created_on')
-    search_fields = ['name', 'content']
-    list_filter = ('status', 'created_on')
-    prepopulated_fields = {'slug': ('name',)}
-    summernote_fields = ('content',)
-
-
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'review', 'created_on', 'thumbs_up')
-    list_filter = ['created_on']
-    search_fields = ('name', 'email', 'body')
-    actions = ['rate_comments']
-
-    def rate_comments(self, request, queryset):
-        queryset.update(approved=True)
