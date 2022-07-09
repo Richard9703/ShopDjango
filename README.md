@@ -1,9 +1,13 @@
 # Django Shop 
-
+A sample e-commerce shop
 
 ## About
 
 ## Features 
+- Register Account
+- Sign-in/out
+- Browse products
+- Add items to cart
 
 ## Future features
 
