@@ -42,9 +42,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'shopapp',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,11 +138,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 
 # Default primary key field type
