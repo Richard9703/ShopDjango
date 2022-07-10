@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'cripsy_forms'
+    'cripsy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
