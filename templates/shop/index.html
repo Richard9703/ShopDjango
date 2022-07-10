@@ -1,5 +1,5 @@
-{% extends "nav.html" %}
-
+{% extends 'shop/nav.html' %}
+{% load static %}
 {% block content %}
 
 <!-- Section -->
@@ -17,17 +17,11 @@
                                 <!-- Product name-->
                                 <h5 class="fw-bolder">{{ product.name }}</h5>
                                 <!-- Product description -->
-                                <p>{{ product.description }}</p>
+                                <p>{{ product.details }}</p>
                                 <!-- Product price-->
-                                <p>{{ product.price }}</p>
+                                <p>€{{ product.price }}</p>
+                                <a class="btn btn-outline-success" href="{% url 'product' product.id %}">View Product</a>
                             </div>
-                            <form class="d-flex">
-                                <button class="btn btn-outline-dark" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Cart
-                                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                                </button>
-                            </form>
                         </div>
                     </div> 
                 </div>
@@ -35,9 +29,6 @@
         </div>   
     </section>
 {% endfor %}
- <!-- Footer-->
- <footer class="py-5 bg-dark">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-</footer>
+ 
    
-{% endblock %}
+{% endblock content %}
